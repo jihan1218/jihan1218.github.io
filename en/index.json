@@ -1,7 +1,7 @@
 [
 {
-	"uri": "http://jihan1218.github.io/en/categories/",
-	"title": "Categories",
+	"uri": "http://jihan1218.github.io/en/",
+	"title": "Hugo Zzo Theme",
 	"tags": [],
 	"categories": [],
 	"series": [],
@@ -9,8 +9,26 @@
 	"content": ""
 },
 {
-	"uri": "http://jihan1218.github.io/en/",
-	"title": "Hugo Zzo Theme",
+	"uri": "http://jihan1218.github.io/en/posts/k_means_clustering/",
+	"title": "K_means_clustering",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://jihan1218.github.io/en/posts/",
+	"title": "Posts",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://jihan1218.github.io/en/categories/",
+	"title": "Categories",
 	"tags": [],
 	"categories": [],
 	"series": [],

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo Zzo Theme</title>
-    <link>http://jihan1218.github.io/en/</link>
-    <description>Recent content on Hugo Zzo Theme</description>
+    <title>Posts on Hugo Zzo Theme</title>
+    <link>http://jihan1218.github.io/en/posts/</link>
+    <description>Recent content in Posts on Hugo Zzo Theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>jihan1218@gmail.com (Jihan Kim)</managingEditor>
@@ -11,7 +11,7 @@
     <copyright>©2020, All Rights Reserved</copyright>
     <lastBuildDate>Tue, 18 Feb 2020 16:47:06 -0800</lastBuildDate>
     
-        <atom:link href="http://jihan1218.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://jihan1218.github.io/en/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     
