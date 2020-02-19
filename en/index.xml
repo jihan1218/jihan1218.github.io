@@ -9,7 +9,7 @@
     <managingEditor>jihan1218@gmail.com (Jihan Kim)</managingEditor>
     <webMaster>jihan1218@gmail.com (Jihan Kim)</webMaster>
     <copyright>©2020, All Rights Reserved</copyright>
-    <lastBuildDate>Tue, 18 Feb 2020 16:47:06 -0800</lastBuildDate>
+    <lastBuildDate>Tue, 18 Feb 2020 17:01:00 -0800</lastBuildDate>
     
         <atom:link href="http://jihan1218.github.io/en/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,11 +17,20 @@
     
       
       <item>
+        <title>About</title>
+        <link>http://jihan1218.github.io/en/about/</link>
+        <pubDate>Tue, 18 Feb 2020 17:01:00 -0800</pubDate>
+        <author>jihan1218@gmail.com (Jihan Kim)</author>
+        <guid>http://jihan1218.github.io/en/about/</guid>
+        <description></description>
+      </item>
+      
+      <item>
         <title>K-Means Clustering</title>
-        <link>http://jihan1218.github.io/en/posts/k_means_clustering/</link>
+        <link>http://jihan1218.github.io/en/posts/k-means-clustering/</link>
         <pubDate>Tue, 18 Feb 2020 16:47:06 -0800</pubDate>
         <author>jihan1218@gmail.com (Jihan Kim)</author>
-        <guid>http://jihan1218.github.io/en/posts/k_means_clustering/</guid>
+        <guid>http://jihan1218.github.io/en/posts/k-means-clustering/</guid>
         <description></description>
       </item>
       

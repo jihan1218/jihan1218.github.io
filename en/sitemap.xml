@@ -3,8 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://jihan1218.github.io/en/about/</loc>
+    <lastmod>2020-02-18T17:01:00-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://jihan1218.github.io/en/</loc>
-    <lastmod>2020-02-18T16:47:06-08:00</lastmod>
+    <lastmod>2020-02-18T17:01:00-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -18,7 +23,7 @@
   </url>
   
   <url>
-    <loc>http://jihan1218.github.io/en/posts/k_means_clustering/</loc>
+    <loc>http://jihan1218.github.io/en/posts/k-means-clustering/</loc>
     <lastmod>2020-02-18T16:47:06-08:00</lastmod>
   </url>
   
