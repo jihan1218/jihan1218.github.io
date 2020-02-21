@@ -929,7 +929,7 @@
     "datePublished": "2020-02-18T16:47:06-08:00",
     "dateModified": "2020-02-18T16:47:06-08:00",
     "url" : "http://jihan1218.github.io/en/posts/k-means-clustering/",
-    "description": "In this post, I\u0026rsquo;d like to discuss about K-means clustering algorithms. It is one of basic unsupervised machine learning algorithms. \u0026lsquo;\u0026lsquo;\u0026lsquo;python …",
+    "description": "In this post, I\u0026rsquo;d like to discuss about K-means clustering algorithms. It is one of basic unsupervised machine learning algorithms. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 …",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http://jihan1218.github.io/"
@@ -1174,26 +1174,49 @@ if (!doNotTrack) {
       
       <p>In this post, I&rsquo;d like to discuss about K-means clustering algorithms.<br />
 It is one of basic unsupervised machine learning algorithms.</p>
-<p>&lsquo;&lsquo;&lsquo;python</p>
-<h1 id="cluster-generater-xlen-ylen--xy--xlenylen--k-the-number-of-clusters-r-radius-of-the-cluster">cluster generater((-xlen,-ylen) &lt; (x,y) &lt; (xlen,ylen) ). k: the number of clusters, r: radius of the cluster,</h1>
-<h1 id="n-the-number-of-data-points-in-each-cluster">n: the number of data points in each cluster</h1>
-<p>def cluster_gen(k,r,n,xlen,ylen):<br />
-data = []</p>
-<pre><code>#create the center of clusters [x|y] coordinates
-kx = np.random.rand(k,1)*xlen*2 - xlen
-ky = np.random.rand(k,1)*ylen*2 - ylen
-kcent = np.append(kx,ky,1)
-#generate n data points around the center of cluster within radius r
-for cluster in range(k):
-    for points in range(n):
-        x = kcent[cluster,0] + r*(random())*math.cos(random()*np.pi)
-        y = kcent[cluster,1] + r*(random())*math.cos(random()*np.pi)
-        data.append([x,y])
-        
-return np.array(data)
-</code></pre>
-<p>'&rsquo;&rsquo;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># cluster generater((-xlen,-ylen) &lt; (x,y) &lt; (xlen,ylen) ). k: the number of clusters, r: radius of the cluster, </span>
+<span class="c1">#  n: the number of data points in each cluster</span>
 
+<span class="k">def</span> <span class="nf">cluster_gen</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">xlen</span><span class="p">,</span><span class="n">ylen</span><span class="p">)</span><span class="p">:</span> 
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
+    
+    <span class="c1">#create the center of clusters [x|y] coordinates</span>
+    <span class="n">kx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">xlen</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="n">xlen</span>
+    <span class="n">ky</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">ylen</span><span class="o">*</span><span class="mi">2</span> <span class="o">-</span> <span class="n">ylen</span>
+    <span class="n">kcent</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kx</span><span class="p">,</span><span class="n">ky</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1">#generate n data points around the center of cluster within radius r</span>
+    <span class="k">for</span> <span class="n">cluster</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">points</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">kcent</span><span class="p">[</span><span class="n">cluster</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">r</span><span class="o">*</span><span class="p">(</span><span class="n">random</span><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">random</span><span class="p">(</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">kcent</span><span class="p">[</span><span class="n">cluster</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">r</span><span class="o">*</span><span class="p">(</span><span class="n">random</span><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">random</span><span class="p">(</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span><span class="p">)</span>
+            
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </article>
     
 <div class="donation">

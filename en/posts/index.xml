@@ -24,10 +24,7 @@
         <guid>http://jihan1218.github.io/en/posts/k-means-clustering/</guid>
         <description>In this post, I&amp;rsquo;d like to discuss about K-means clustering algorithms.
 It is one of basic unsupervised machine learning algorithms.
-&amp;lsquo;&amp;lsquo;&amp;lsquo;python
-cluster generater((-xlen,-ylen) &amp;lt; (x,y) &amp;lt; (xlen,ylen) ). k: the number of clusters, r: radius of the cluster, n: the number of data points in each cluster def cluster_gen(k,r,n,xlen,ylen):
-data = []
-#create the center of clusters [x|y] coordinates kx = np.random.rand(k,1)*xlen*2 - xlen ky = np.random.rand(k,1)*ylen*2 - ylen kcent = np.</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  # cluster generater((-xlen,-ylen) &amp;lt; (x,y) &amp;lt; (xlen,ylen) ). k: the number of clusters, r: radius of the cluster,  # n: the number of data points in each cluster def cluster_gen(k,r,n,xlen,ylen): data = [] #create the center of clusters [x|y] coordinates kx = np.</description>
       </item>
       
     
