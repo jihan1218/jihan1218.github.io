@@ -24,7 +24,7 @@
 	"categories": [],
 	"series": [],
 	"description": "",
-	"content": ""
+	"content": "In this post, I\u0026rsquo;d like to discuss about K-means clustering algorithms.\nIt is one of basic unsupervised machine learning algorithms.\n\u0026lsquo;\u0026lsquo;\u0026lsquo;python\ncluster generater((-xlen,-ylen) \u0026lt; (x,y) \u0026lt; (xlen,ylen) ). k: the number of clusters, r: radius of the cluster, n: the number of data points in each cluster def cluster_gen(k,r,n,xlen,ylen):\ndata = []\n#create the center of clusters [x|y] coordinates kx = np.random.rand(k,1)*xlen*2 - xlen ky = np.random.rand(k,1)*ylen*2 - ylen kcent = np.append(kx,ky,1) #generate n data points around the center of cluster within radius r for cluster in range(k): for points in range(n): x = kcent[cluster,0] + r*(random())*math.cos(random()*np.pi) y = kcent[cluster,1] + r*(random())*math.cos(random()*np.pi) data.append([x,y]) return np.array(data) ''' "
 },
 {
 	"uri": "http://jihan1218.github.io/en/posts/",
