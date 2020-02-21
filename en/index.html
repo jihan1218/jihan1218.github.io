@@ -1155,14 +1155,15 @@ if (!doNotTrack) {
     <div class="summary-classic__content">
       <header>
         <h5 class="title h5"><a href='http://jihan1218.github.io/en/posts/k-means-clustering/'> K-Means Clustering</a> </h5>
-        <h6 class="subtitle caption"><time title="Written At" dir="ltr">📅 Feb 18, 2020 </time>  <span title="Reading Time" dir="ltr"> &middot; ☕ 1 min read </span></h6>
+        <h6 class="subtitle caption"><time title="Written At" dir="ltr">📅 Feb 18, 2020 </time>  <span title="Reading Time" dir="ltr"> &middot; ☕ 2 min read </span></h6>
       </header>
       <div>
         <div class="summary-classic__text p2">
           
-            In this post, I&rsquo;d like to discuss about K-means clustering algorithms.
-It is one of basic unsupervised machine learning algorithms.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  # cluster generater((-xlen,-ylen) &lt; (x,y) &lt; (xlen,ylen) ). k: the number of clusters, r: radius of the cluster,  # n: the number of data points in each cluster def cluster_gen(k,r,n,xlen,ylen): data = [] #create the center of clusters [x|y] coordinates kx = np.
+            In this post, I&rsquo;d like to discuss about one of basic unsupervised machine learning algorithms, K-means clustering.
+Basic idea of kmeans clustering is to find positions which minimize the variance of each cluster. Mathematical description is
+here math
+Kmeans clustering algorithm steps:  Generate K initial centroids at random positions Assign each data point with a cluster-label by finding the centroid which is the closest to the data Calculate new centroids by finding the first moment of each cluster over total number of data within the cluster Repeat 2 and 3 until centroids converge  Implementation In order to run this python code, we first need to import python libraries.
           
         </div>
       </div>

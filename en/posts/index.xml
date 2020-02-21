@@ -22,9 +22,10 @@
         <pubDate>Tue, 18 Feb 2020 16:47:06 -0800</pubDate>
         <author>jihan1218@gmail.com (Jihan Kim)</author>
         <guid>http://jihan1218.github.io/en/posts/k-means-clustering/</guid>
-        <description>In this post, I&amp;rsquo;d like to discuss about K-means clustering algorithms.
-It is one of basic unsupervised machine learning algorithms.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18  # cluster generater((-xlen,-ylen) &amp;lt; (x,y) &amp;lt; (xlen,ylen) ). k: the number of clusters, r: radius of the cluster,  # n: the number of data points in each cluster def cluster_gen(k,r,n,xlen,ylen): data = [] #create the center of clusters [x|y] coordinates kx = np.</description>
+        <description>In this post, I&amp;rsquo;d like to discuss about one of basic unsupervised machine learning algorithms, K-means clustering.
+Basic idea of kmeans clustering is to find positions which minimize the variance of each cluster. Mathematical description is
+here math
+Kmeans clustering algorithm steps:  Generate K initial centroids at random positions Assign each data point with a cluster-label by finding the centroid which is the closest to the data Calculate new centroids by finding the first moment of each cluster over total number of data within the cluster Repeat 2 and 3 until centroids converge  Implementation In order to run this python code, we first need to import python libraries.</description>
       </item>
       
     

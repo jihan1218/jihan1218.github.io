@@ -929,7 +929,7 @@
     "datePublished": "2020-02-18T16:47:06-08:00",
     "dateModified": "2020-02-18T16:47:06-08:00",
     "url" : "http://jihan1218.github.io/en/posts/k-means-clustering/",
-    "description": "In this post, I\u0026rsquo;d like to discuss about K-means clustering algorithms. It is one of basic unsupervised machine learning algorithms. 1 2 3 4 5 6 7 8 9 10 11 12 13 14 …",
+    "description": "In this post, I\u0026rsquo;d like to discuss about one of basic unsupervised machine learning algorithms, K-means clustering. Basic idea of kmeans clustering is to find …",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http://jihan1218.github.io/"
@@ -1161,7 +1161,7 @@ if (!doNotTrack) {
     <div class="single__meta">
       
 <div class="single__infos">
-  <time class="single__info" title="Written At">📅&nbsp;Feb 18, 2020 </time>  &middot; <span class="single__info" title="Reading Time"> ☕ 1 min read </span>
+  <time class="single__info" title="Written At">📅&nbsp;Feb 18, 2020 </time>  &middot; <span class="single__info" title="Reading Time"> ☕ 2 min read </span>
   <span class="single__info">
     
   </span>
@@ -1172,8 +1172,39 @@ if (!doNotTrack) {
     </div>    
     <article class="single__contents">
       
-      <p>In this post, I&rsquo;d like to discuss about K-means clustering algorithms.<br />
-It is one of basic unsupervised machine learning algorithms.</p>
+      <p>In this post, I&rsquo;d like to discuss about one of basic unsupervised machine learning algorithms, K-means clustering.</p>
+<p>Basic idea of kmeans clustering is to find positions which minimize the variance of each cluster. Mathematical description is</p>
+<p>here math</p>
+<h2 id="kmeans-clustering-algorithm-steps">Kmeans clustering algorithm steps:</h2>
+<ol>
+<li>Generate K initial centroids at random positions</li>
+<li>Assign each data point with a cluster-label by finding the centroid which is the closest to the data</li>
+<li>Calculate new centroids by finding the first moment of each cluster over total number of data within the cluster</li>
+<li>Repeat 2 and 3 until centroids converge</li>
+</ol>
+<h1 id="implementation">Implementation</h1>
+<p>In order to run this python code, we first need to import python libraries.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="generating-clusters">Generating Clusters</h2>
+<p>To generate k number of clusters, I started with k random points within xmin &lt; x &lt; xmax and ymin &lt; y &lt; ymax.<br />
+Then gernate total n data points randomly within the radius r centering at each initial point.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -1216,7 +1247,29 @@ It is one of basic unsupervised machine learning algorithms.</p>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
+</div><h3 id="test-results">test results</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># test cluster generater</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">cluster_gen</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">r</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">xlen</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">ylen</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="p">:</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="p">,</span><span class="n">data</span><span class="p">[</span><span class="p">:</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="p">:</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></td></tr></table>
 </div>
+</div><p><img src="./pictures/clusters.png" alt="image info" /></p>
+<p>This is basic steps for kmeans clustering algorithm. However, the result can be affected by initial centroids. Some initial centroids can be converged into the same cluster or can be converged without any cluster-label. In order to resolve the issue we can add two more steps</p>
+<h2 id="additional-steps">Additional steps</h2>
+<ol start="5">
+<li>Repeat 1-4 steps multiple times and store average variance of</li>
+<li>Find</li>
+</ol>
+
     </article>
     
 <div class="donation">
@@ -1732,7 +1785,20 @@ document.addEventListener('DOMContentLoaded', function () {
     
   </div>
   <div class="toc " data-dir="ltr">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#kmeans-clustering-algorithm-steps">Kmeans clustering algorithm steps:</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#generating-clusters">Generating Clusters</a>
+      <ul>
+        <li><a href="#test-results">test results</a></li>
+      </ul>
+    </li>
+    <li><a href="#additional-steps">Additional steps</a></li>
+  </ul>
+</nav>
   </div>
 </section>
 
