@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jihan Homepage</title>
-    <link>http://jihan1218.github.io/ko/</link>
-    <description>Recent content on Jihan Homepage</description>
+    <title>Tags on Jihan Homepage</title>
+    <link>http://jihan1218.github.io/tags/</link>
+    <description>Recent content in Tags on Jihan Homepage</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko</language>
+    <language>en</language>
     <managingEditor>jihan1218@gmail.com (Jihan Kim)</managingEditor>
     <webMaster>jihan1218@gmail.com (Jihan Kim)</webMaster>
     <copyright>©2020, All Rights Reserved</copyright>
+    <lastBuildDate>Wed, 26 Feb 2020 11:58:50 -0800</lastBuildDate>
     
-        <atom:link href="http://jihan1218.github.io/ko/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://jihan1218.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     

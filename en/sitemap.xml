@@ -3,37 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://jihan1218.github.io/en/about/</loc>
-    <lastmod>2020-02-18T17:01:00-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jihan1218.github.io/en/</loc>
-    <lastmod>2020-02-18T17:01:00-08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="ko"
-                href="http://jihan1218.github.io/ko/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://jihan1218.github.io/en/"
-                />
-  </url>
-  
-  <url>
-    <loc>http://jihan1218.github.io/en/posts/k-means-clustering/</loc>
-    <lastmod>2020-02-18T16:47:06-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jihan1218.github.io/en/posts/</loc>
-    <lastmod>2020-02-18T16:47:06-08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jihan1218.github.io/en/categories/</loc>
+    <loc>http://jihan1218.github.io/categories/</loc>
+    <lastmod>2020-02-26T11:58:50-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -42,12 +13,38 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://jihan1218.github.io/en/categories/"
+                href="http://jihan1218.github.io/categories/"
                 />
   </url>
   
   <url>
-    <loc>http://jihan1218.github.io/en/series/</loc>
+    <loc>http://jihan1218.github.io/gallery/</loc>
+    <lastmod>2020-02-26T11:58:50-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jihan1218.github.io/</loc>
+    <lastmod>2020-02-26T11:58:50-08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ko"
+                href="http://jihan1218.github.io/ko/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://jihan1218.github.io/"
+                />
+  </url>
+  
+  <url>
+    <loc>http://jihan1218.github.io/gallery/photography/</loc>
+    <lastmod>2020-02-26T11:58:50-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jihan1218.github.io/series/</loc>
+    <lastmod>2020-02-26T11:58:50-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -56,12 +53,13 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://jihan1218.github.io/en/series/"
+                href="http://jihan1218.github.io/series/"
                 />
   </url>
   
   <url>
-    <loc>http://jihan1218.github.io/en/tags/</loc>
+    <loc>http://jihan1218.github.io/tags/</loc>
+    <lastmod>2020-02-26T11:58:50-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -70,8 +68,23 @@
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://jihan1218.github.io/en/tags/"
+                href="http://jihan1218.github.io/tags/"
                 />
+  </url>
+  
+  <url>
+    <loc>http://jihan1218.github.io/about/</loc>
+    <lastmod>2020-02-18T17:01:00-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jihan1218.github.io/posts/k-means-clustering/</loc>
+    <lastmod>2020-02-18T16:47:06-08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jihan1218.github.io/posts/</loc>
+    <lastmod>2020-02-18T16:47:06-08:00</lastmod>
   </url>
   
 </urlset>
