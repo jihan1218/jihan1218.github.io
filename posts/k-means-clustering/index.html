@@ -1173,7 +1173,7 @@ if (!doNotTrack) {
     <div class="single__meta">
       
 <div class="single__infos">
-  <time class="single__info" title="Written At">📅&nbsp;Feb 18, 2020 </time>  &middot; <span class="single__info" title="Reading Time"> ☕ 5 min read </span>
+  <time class="single__info" title="Written At">📅&nbsp;Feb 18, 2020 </time>  &middot; <span class="single__info" title="Reading Time"> ☕ 6 min read </span>
   <span class="single__info">
     
   </span>
@@ -1335,18 +1335,11 @@ Then gernate total n data points randomly within the radius r centering at each 
 </span><span class="lnt">51
 </span><span class="lnt">52
 </span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># calculate distance between two points</span>
 <span class="k">def</span> <span class="nf">dist</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)</span><span class="p">:</span>
-    <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">)</span><span class="o">*</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="p">)</span><span class="o">*</span><span class="o">*</span><span class="mi">2</span>
-    <span class="n">d</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">d</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="p">(</span><span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="c1"># find xy coordinates of the centroid of a cluster</span>
 <span class="k">def</span> <span class="nf">cent_mass</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="p">:</span>
@@ -1358,10 +1351,7 @@ Then gernate total n data points randomly within the radius r centering at each 
 
 <span class="c1"># Assign initial k centroids by randomly selecting k samples from data</span>
 <span class="k">def</span> <span class="nf">init_centroid</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">data</span><span class="p">)</span><span class="p">:</span>
-    <span class="n">data_len</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">ind_rand</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="n">data_len</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">k</span><span class="p">)</span>
-    <span class="n">k_init</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">ind_rand</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">k_init</span>
+    <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">,</span><span class="n">size</span> <span class="o">=</span> <span class="n">k</span><span class="p">)</span><span class="p">,</span><span class="p">:</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">k_means</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">data</span><span class="p">)</span><span class="p">:</span>
     <span class="n">k_init</span> <span class="o">=</span> <span class="n">init_centroid</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
@@ -1435,13 +1425,104 @@ Then gernate total n data points randomly within the radius r centering at each 
 </div><p><image src="/kmeans/kmeans result.png"></image></p>
 <p>The result shows that the algorithm captures 3 clusters successfully.</p>
 <p>However, k-means clustering algorithm can be affected by the initial centroids when clusters are dispersed. For example, if two randomly selected initial centroids are located within the same cluster, they can be converged within the same cluster. Here is the example plots.</p>
-<p><image src="/kmeans/dispersed cluster result.png"></image></p>
-<p>This plot shows that two centroids on the left side are converged within the same cluster while the centroid at the bottom is converged with two clusters. In order to resolve this problem, we can add one additional steps.</p>
-<h2 id="additional-steps">Additional steps</h2>
-<ol start="5">
-<li>Iterate previous 1-4 steps multiple times and store the sum of variance of each cluster</li>
-<li>Find the centroids which make the total sum of variance of clusters to be minimum</li>
+<p><image src="/kmeans/dispersed cluster.png"></image></p>
+<p>This plot shows that two centroids on the right side are converged within the same cluster while the centroid on the left side is converged with two clusters. One way of resolving this problem is to make sure initial centroids are further apart. This method is called k-means++ algorithm.</p>
+<h2 id="k-means-algorithm">K-means++ algorithm</h2>
+<p>Now, instead of selecting random initial centroids from the data set, we first pick one centroid and then other centroids are selected based on maximum distance. Here is the steps of k-means++ algorithm.</p>
+<ol>
+<li>Pick one intial centroid randomly from the data set</li>
+<li>Compute distance of each data point from the centroid and assign a point which has the largest distance as the next centroid</li>
+<li>Compute the closest distance of each data point from each centroid</li>
+<li>Assign a point which has the maximum value as the next centroid</li>
+<li>Repeat 3 and 4 until k centroids are selected</li>
 </ol>
+<p>Here is the k-means++ code in python.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Select initial k centroids by finding a point which is farthest</span>
+<span class="k">def</span> <span class="nf">init_centroid_better</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">data</span><span class="p">)</span><span class="p">:</span>
+    <span class="n">k_init</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
+    <span class="n">k_init</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">)</span><span class="p">,</span><span class="p">:</span><span class="p">]</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="p">:</span>
+        <span class="n">distance</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">)</span><span class="p">:</span>
+            <span class="n">cur_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="p">:</span><span class="p">]</span>
+            <span class="n">dist_temp</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">k_init</span><span class="p">)</span><span class="p">)</span><span class="p">:</span>
+                <span class="n">dist_centroid</span> <span class="o">=</span> <span class="n">dist</span><span class="p">(</span><span class="n">cur_data</span><span class="p">,</span><span class="n">k_init</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="p">)</span>
+                <span class="n">dist_temp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dist_centroid</span><span class="p">)</span>
+            <span class="n">d_min</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">dist_temp</span><span class="p">)</span>
+            <span class="n">distance</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d_min</span><span class="p">)</span>
+        <span class="n">ind_cent</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+        <span class="n">k_init</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">ind_cent</span><span class="p">]</span><span class="p">)</span>
+    <span class="n">k_init</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">k_init</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">k_init</span>     
+</code></pre></td></tr></table>
+</div>
+</div><p>Now we can replace the k-means clustering algorithm with better initialization algorithm.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">k_means</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">data</span><span class="p">)</span><span class="p">:</span>
+    
+    <span class="c1">#### K-means++ algorithm</span>
+    <span class="n">k_init</span> <span class="o">=</span> <span class="n">init_centroid_better</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> 
+    
+    <span class="n">breaker</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">while</span> <span class="n">breaker</span><span class="p">:</span>
+        <span class="c1"># label each data point with k-cluster</span>
+        <span class="n">cluster</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="p">)</span><span class="p">:</span>
+            <span class="n">ksort</span> <span class="o">=</span> <span class="p">[</span><span class="p">]</span>
+            <span class="n">cur_p</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">)</span><span class="p">:</span>
+
+                <span class="p">:</span>
+                <span class="p">:</span>
+                <span class="p">:</span>
+                <span class="c1"># rest of the code is the same </span>
+</code></pre></td></tr></table>
+</div>
+</div><p><image src="/kmeans/kmeans++.png"></image></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -2039,7 +2120,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <li><a href="#test-k-means-clustering-algorithm">Test K-means clustering algorithm</a></li>
       </ul>
     </li>
-    <li><a href="#additional-steps">Additional steps</a>
+    <li><a href="#k-means-algorithm">K-means++ algorithm</a>
       <ul>
         <li><a href="#test-k-means-clustering-algorithm-1">Test K-means clustering algorithm</a></li>
       </ul>
